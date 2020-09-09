@@ -68,4 +68,16 @@ return [
     */
 
     'force_login' => env('CANVAS_FORCE_LOGIN', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Scopes
+    |--------------------------------------------------------------------------
+    |
+    | If your developer key is implementing scopes (recommended)
+    | define those scopes here.
+    |
+    */
+
+    'scope' => [],
 ];

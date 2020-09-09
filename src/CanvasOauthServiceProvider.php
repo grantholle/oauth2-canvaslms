@@ -21,6 +21,7 @@ class CanvasOauthServiceProvider extends ServiceProvider
                 'redirectUri' => route(config('canvas.redirect_route')),
                 'canvasInstanceUrl' => config('canvas.url'),
                 'forceLogin' => config('canvas.force_login'),
+                'scope' => config('canvas.scope'),
             ]);
         });
     }
