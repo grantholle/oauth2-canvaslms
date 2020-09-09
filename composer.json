@@ -1,5 +1,5 @@
 {
-    "name": "jmu-cs/oauth2-canvaslms",
+    "name": "smtech/oauth2-canvaslms",
     "description": "Canvas LMS OAuth 2.0 support for the PHP League's OAuth 2.0 Client",
     "license": "MIT",
     "authors": [
