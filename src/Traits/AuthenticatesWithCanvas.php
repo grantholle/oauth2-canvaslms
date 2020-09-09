@@ -44,6 +44,15 @@ trait AuthenticatesWithCanvas
         return $this->verified($token, $user);
     }
 
+    public function logout()
+    {
+        auth()->logout();
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return $this->loggedOut() ?: response()->redirect('login');
+    }
+
     /**
      * This gets called once the user has been verified.
      * Here you will need to save the token somehow
@@ -55,6 +64,11 @@ trait AuthenticatesWithCanvas
      * @return mixed
      */
     protected function verified(AccessTokenInterface $token, array $user)
+    {
+        //
+    }
+
+    public function loggedOut()
     {
         //
     }
