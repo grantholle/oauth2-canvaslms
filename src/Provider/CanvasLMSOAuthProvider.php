@@ -9,7 +9,7 @@ use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
-class CanvasLMS extends AbstractProvider
+class CanvasLMSOAuthProvider extends AbstractProvider
 {
 
     use ArrayAccessorTrait,
@@ -28,6 +28,13 @@ class CanvasLMS extends AbstractProvider
     protected $purpose;
 
     /**
+     * Flag for forcing the user to log in
+     *
+     * @var bool
+     */
+    protected $forceLogin = false;
+
+    /**
      * Type of token requested (`authorization_code` or `refresh_token`)
      * @var [type]
      */
@@ -40,6 +47,11 @@ class CanvasLMS extends AbstractProvider
     {
         $options = parent::getAuthorizationParameters($options);
         $options['purpose'] = $this->purpose;
+
+        if ($this->forceLogin) {
+            $options['force_login'] = '1';
+        }
+
         return $options;
     }
 

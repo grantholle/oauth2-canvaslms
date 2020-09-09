@@ -14,11 +14,20 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "league/oauth2-client": "^2.5"
+        "league/oauth2-client": "^2.5",
+        "illuminate/http": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0"
     },
     "autoload": {
         "psr-4": {
             "smtech\\OAuth2\\Client\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "smtech\\OAuth2\\Client\\CanvasOauthServiceProvider"
+            ]
         }
     }
 }

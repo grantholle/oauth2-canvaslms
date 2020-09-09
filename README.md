@@ -27,7 +27,7 @@ Per the [Canvas OAUth docs](https://canvas.instructure.com/doc/api/file.oauth.ht
 A small example:
 
 ```PHP
-use smtech\OAuth2\Client\Provider\CanvasLMS;
+use smtech\OAuth2\Client\Provider\CanvasLMSOAuthProvider;
 
 session_start();
 
@@ -36,7 +36,7 @@ define('CODE', 'code');
 define('STATE', 'state');
 define('STATE_LOCAL', 'oauth2-state');
 
-$provider = new CanvasLMS([
+$provider = new CanvasLMSOAuthProvider([
     'clientId' => '160000000000127',
     'clientSecret' => 'z4RUroeMI0uuRAA8h7dZy6i4QS4GkBqrWUxr9jUdgcZobpVMCEBmOGMNa2D3Ab4A',
     'purpose' => 'My App Name',
@@ -65,3 +65,5 @@ if (!isset($_GET[CODE])) {
     exit;
 }
 ```
+
+## Laravel Support
